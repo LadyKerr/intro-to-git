@@ -1,0 +1,24 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Collaborative Code Editor</title>
+</head>
+<body>
+    <textarea id="code-editor" rows="30" cols="70"></textarea>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+
+        const codeEditor = document.getElementById('code-editor');
+        codeEditor.addEventListener('input', () => {
+            socket.emit('code change', codeEditor.value);
+        });
+
+        socket.on('code update', (data) => {
+            codeEditor.value = data;
+        });
+    </script>
+</body>
+</html>
