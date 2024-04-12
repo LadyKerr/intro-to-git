@@ -1,0 +1,1 @@
+Hi I'm Eunice and I'm a frontend developer. I'm excited to contribute! I am NOT excited about merge conficts 🤣
